@@ -26,7 +26,7 @@ let userEmail = undefined
 const id = Symbol('123')
 const id1 = Symbol('123')
 
-console.log(id === id1);
+// console.log(id === id1);
 
 const bigNumber = 34565435576654356754n
 
@@ -42,5 +42,31 @@ const myfunc = function(){
     console.log("Hello World");
 }
 
-console.log(typeof myfunc); // => function
-console.log(typeof myObj); // => obj
+// console.log(typeof myfunc); // => function
+// console.log(typeof myObj); // => obj
+
+// ****************************************************
+
+// Stack(Primitive), Heap(Non-Primitive)
+// if something is defined in stack memory we get a copy of things,
+// on the other hand in heap we get reference of original value.
+
+let myYTName = "YashSindhu"  
+let anothername = myYTName
+anothername = "SinduYash"
+
+console.log(myYTName);    // These are non primitive datatypes so stored in stack and we are modifying the value of copy so not changin original
+console.log(anothername);
+
+let userOne = {
+    email: "user@google.com",
+    upi: "user@ybl"
+}
+
+let userTwo = userOne
+userTwo.email = "yash@google.com"
+
+console.log(userOne.email); // Here we are using non-primitive datatype so if we modify data it changes the original data beacuse in heap we get referance of original data
+console.log(userTwo.email);
+
+
